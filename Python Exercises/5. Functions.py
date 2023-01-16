@@ -38,3 +38,18 @@ print("Functions: Activity 2: Create a function to calculate the factorial of a 
 def Factorial(n):
     return 1 if (n==1 or n==0) else n * Factorial(n - 1) # I calculate the factorial
 print("Factorial of",5,"is",Factorial(5))
+
+print("Functions: Activity 3: Write a Python function that takes a number as a parameter and check the number is prime or not.")
+
+n = int(input("Type a number to check whether it is prime or composite: "))
+def Prime(n):
+    if n > 1:
+        for i in range(2, int(n/2)+1):
+            if (n % i) == 0:
+                print(n, "is a composite number")
+                break
+        else:
+            print(n, "is a prime number")
+    else:
+        print(n, " is a composite number")
+Prime(n)
