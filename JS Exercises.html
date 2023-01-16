@@ -287,6 +287,45 @@
 		</script>
 
 		<h3>Activiy 5.3: Write a JS function that takes a number as a parameter and check the number is prime or not</h3>
+			
+			</script>
+
+			<form action="" method="post" id="checkPrimeForm">
+				<label for="numPrime">Type a number to check whether it is prime or not</label>
+				<input type="text" name="" id="numPrime" required> <!-- Input prompt to collect the number to be checked -->
+				<input type="text" name="solution" id="solution" disabled> <!-- Where we will display the solution -->
+				<input type="button" onclick="checkPrime()" value="Calculate";> <!-- Button to call the function --> 
+			</form>
+
+		<script>
+
+			function checkPrime() { // Create a function to check whether a number is prime or not called "checkPrime"
+				var num = document.getElementById("numPrime").value // Create a variable to store the number collected from the input in the previous form
+				let isPrime = true; // We create a variable called isPrime with the value true, that we will use as true when the number is prime, and false when it is not.
+
+				if (num == 1) {
+					document.getElementById("solution").value = (num + " is composite"); // If the number is 1, display it is composite
+				}
+				else if (num > 1) { // If the number is positive other than 1
+					for (let i = 2; i < num; i++){ // Looping i from 2 to (num-1)
+						if (num % i == 0) { // We divide num by the value of i in each iteration. If the remainder of this division is 0
+							isPrime = false; // then num is composite, which means variable isPrime is false
+							break; // and you can then stop the loop
+						}
+					}
+					if (isPrime) { // If the value of isPrime is true (which we set to be by default)
+						document.getElementById("solution").value = (num + " is prime"); // display that it is prime
+					} else { // If isPrime is false
+						document.getElementById("solution").value = (num + " is composite"); // display it is composite
+					}
+				}
+				else { // For negative numbers or other 
+					document.getElementById("solution").value = (num + " is composite");// display it is composite
+				}
+		  		return false; // This prevents the page from reloading when calling the function
+		  	}
+	
+		</script>
 
 <!-- Document Object Model -->
 
