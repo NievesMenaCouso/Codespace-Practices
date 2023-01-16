@@ -307,26 +307,22 @@
 			</script>
 
 		<h3>Activity 6.2: Write a JavaScript program to calculate the VOLUME of a SPHERE</h3>
-
+			
 			<p>Input radius value and get the volume of a sphere.</p>
-	        <form action="" method="post" id="MyForm"> <!-- Form's id is "MyForm" -->
+	        <form action="" method="post" id="calculateRadius"> 
 	            <label for="radius">Radius</label><input type="text" name="radius" id="radius" required> <!-- Input prompt radius -->
-	            <label for="volume">Volume</label><input type="text" name="volume" id="volume"><!-- Input prompt volume -->
-	            <input type="submit" value="Calculate" id="submit"> <!-- Submit button --> 
+	            <label for="volume">Volume</label><input type="text" name="volume" id="volume" disabled><!-- Disabled Input volume -->
+	            <input type="button" onclick="volume_sphere()" value="Calculate"> <!-- Button to call for the tunction --> 
 	        </form>
 	        <script>
 	            function volume_sphere(){ // Define a function to calculate the volume of a sphere out of its radius
-	              var volume; // Declare a variable "Volume" to assign a value later on
 	              var radius = document.getElementById('radius').value; // Declare a variable "radius" and assign the value produced by input "radius" to it.
 	              radius = Math.abs(radius); // This extracts the absolute value of the input "radius", as a radius cannot be negative.
 	              volume = (4/3) * Math.PI * radius**3; // Assign to the variable "Volume" the value of the calculations of volume of a sphere ((4/3)*Pi*radius**3)
 	              volume = volume.toFixed(4); // This limits the number of decimals stored in "volume" to 4.
 	              document.getElementById('volume').value = volume; // Change the value of the variable "volume" to the result of the calculations.
-	              return false; // This prevents the reload of the website when you call the function
 	            } 
-	            window.onload = document.getElementById('MyForm').onsubmit = volume_sphere; // Call the function for "MyForm"
 	        </script>
-
 
 		
 	</body>
